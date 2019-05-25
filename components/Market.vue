@@ -4,9 +4,9 @@
       <div class="description">
         {{ location.description }}
       </div>
-      <nuxt-link :to="`/locations/${location.id}`">
+      <a :href="`/locations/${location.id}`">
         read more
-      </nuxt-link>
+      </a>
     </l-popup>
   </l-marker>
 </template>

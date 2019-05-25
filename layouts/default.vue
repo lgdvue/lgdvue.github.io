@@ -16,9 +16,11 @@
       dense
       app
     >
+      <!--
       <v-toolbar-side-icon
         @click="drawer = !drawer"
       />
+      -->
       <nuxt-link v-show="drawer" to="/" class="logo">
         <img height="40px" src="~/static/logo.png">
       </nuxt-link>

@@ -55,7 +55,7 @@
                     :items="['House', 'Street']"
                     label="Type*"
                     required
-                  ></v-select>
+                  />
                 </v-flex>
               </v-layout>
             </v-container>
@@ -85,11 +85,11 @@ export default {
     return {
       dialog: false,
       location: {
-        lat: '40.5',
-        lng: '-3.7',
-        title: 'Titulo migue',
-        description: 'asdfasdf',
-        type: 'house'
+        lat: '',
+        lng: '',
+        title: '',
+        description: '',
+        type: ''
       }
     }
   },
