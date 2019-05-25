@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  vue:
+    build: .docker
+    container_name: vue
+    working_dir: /www
+    command: bash -c "npm run dev"
+    volumes:
+      - ./:/www
+    ports:
+      - 8080:8080

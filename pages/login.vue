@@ -12,7 +12,6 @@
         sm8
         md4
       >
-        <Metas />
         <v-card class="elevation-12">
           <v-toolbar dark color="primary">
             <v-toolbar-title>Login</v-toolbar-title>
@@ -37,12 +36,8 @@
 
 <script>
 import axios from 'axios'
-import Metas from '@/components/Layout/Metas'
 
 export default {
-  components: {
-    Metas
-  },
   data() {
     return {
       user: {
@@ -62,6 +57,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

@@ -1,4 +1,5 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import axios from 'axios'
 
 const canonical = 'https://lgdvue.github.io'
 const title = 'Pink Film'
@@ -104,6 +105,19 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+
+  /*
+  ** generate
+  */
+  generate: {
+    routes: function() {
+      return axios.get('https://pinkfilm.dev/api/locations').then(res => {
+        return res.data.map(location => {
+          return '/locations/' + location.id
+        })
+      })
     }
   }
 }
