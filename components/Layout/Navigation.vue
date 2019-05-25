@@ -27,17 +27,19 @@ export default {
         title: 'Home',
         icon: 'dashboard',
         link: '/'
-      },
+      }
+      /*
       {
         title: 'Cuenta',
         icon: 'folder',
         link: '/dashboard',
         items: [
-          { title: 'Crear', link: '/dashboard/crear' },
-          { title: 'Borrar', link: '/dashboard/borrar' },
-          { title: 'Editar', link: '/dashboard/editar' }
+          { title: 'Crear', link: '/dashboard/create' },
+          { title: 'Editar', link: '/dashboard/edit' },
+          { title: 'Borrar', link: '/dashboard/delete' }
         ]
       }
+      */
     ]
   })
 }

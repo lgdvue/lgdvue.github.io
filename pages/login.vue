@@ -15,13 +15,13 @@
         <Metas />
         <v-card class="elevation-12">
           <v-toolbar dark color="primary">
-            <v-toolbar-title>Login form</v-toolbar-title>
+            <v-toolbar-title>Login</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
-            <v-form>
+            <form @submit.prevent="submit">
               <v-text-field prepend-icon="person" name="login" label="Login" type="text" />
               <v-text-field id="password" prepend-icon="lock" name="password" label="Password" type="password" />
-            </v-form>
+            </form>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -36,11 +36,29 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Metas from '@/components/Layout/Metas'
 
 export default {
   components: {
     Metas
+  },
+  data() {
+    return {
+      user: {
+        username: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    submit() {
+      axios
+        .post('https://jsonplaceholder.typicode.com/todos/', this.user)
+        .then(() => {
+          // ToDo
+        })
+    }
   }
 }
 </script>

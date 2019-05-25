@@ -1,51 +1,27 @@
 <template>
-  <v-container
-    fluid
-    grid-list-md
-  >
-    <v-layout
-      row
-      wrap
-    >
-      <v-flex
-        v-for="location in locations"
-        :key="location.slug"
-        xs12
-        sm6
-        md4
-        lg3
-      >
-        <Location
-          :location="location"
-        />
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div>
+    <Map :locations="locations" />
+    <New />
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Location from '@/components/Location'
+import Map from '@/components/Map'
+import New from '@/components/Dialog/New.vue'
 
 export default {
   components: {
-    Location
+    Map,
+    New
   },
   async asyncData() {
-    const res = await axios.get('https://jsonplaceholder.typicode.com/todos')
+    const res = await axios.get('https://pinkfilm.dev/api/locations')
     const locations = res.data
 
     return {
       locations: locations
     }
-  },
-  head() {
-    return {
-      title: 'Locations'
-    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

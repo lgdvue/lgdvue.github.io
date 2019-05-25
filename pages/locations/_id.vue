@@ -1,23 +1,41 @@
 <template>
-  <div>
-    <Metas />
-    {{ location }}
-  </div>
+  <v-container
+    fluid
+    grid-list-md
+  >
+    <v-layout
+      row
+      wrap
+    >
+      <v-flex
+        sm12
+        md8
+      >
+        <Map :locations="location" />
+      </v-flex>
+      <v-flex
+        sm12
+        md4
+      >
+        {{ location }}
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
 import axios from 'axios'
-import Metas from '@/components/Layout/Metas'
+import Map from '@/components/Map'
 
 export default {
   components: {
-    Metas
+    Map
   },
   async asyncData({ params }) {
     const res = await axios.get(
-      `https://jsonplaceholder.typicode.com/todos/${params.id}`
+      `https://pinkfilm.dev/api/locations/${params.id}`
     )
-    const location = res.data
+    const location = [res.data]
 
     return {
       location: location
@@ -25,6 +43,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
