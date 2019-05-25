@@ -1,8 +1,5 @@
 <template>
   <l-marker :lat-lng="[location.lat, location.lng]" :title="location.title">
-    <!--
-      <l-popup :content="location.description" />
-    -->
     <l-popup>
       <div class="description">
         {{ location.description }}

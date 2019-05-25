@@ -26,6 +26,11 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  head() {
+    return {
+      title: 'Pink Film - Locations'
+    }
   }
 }
 </script>
