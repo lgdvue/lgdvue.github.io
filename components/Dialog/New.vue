@@ -50,15 +50,13 @@
                     required
                   />
                 </v-flex>
-                <!--
                 <v-flex xs12 sm6>
                   <v-select
-                    :items="['0-17', '18-29', '30-54', '54+']"
-                    label="Age*"
+                    :items="['House', 'Street']"
+                    label="Type*"
                     required
                   ></v-select>
                 </v-flex>
-                -->
               </v-layout>
             </v-container>
             <small>* required field</small>
@@ -87,17 +85,18 @@ export default {
     return {
       dialog: false,
       location: {
-        lat: '',
-        lng: '',
-        title: '',
-        description: ''
+        lat: '40.5',
+        lng: '-3.7',
+        title: 'Titulo migue',
+        description: 'asdfasdf',
+        type: 'house'
       }
     }
   },
   methods: {
     submit() {
       axios
-        .post('https://jsonplaceholder.typicode.com/todos/', this.location)
+        .post('https://pinkfilm.dev/api/locations/', this.location)
         .then(() => {
           this.dialog = false
         })
